@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IC Pack · FX-Hedged Expansion Desk · Infosys</title>
+  <style>
+    :root {
+      --ink: #122033;
+      --muted: #5c6b7a;
+      --line: #d7dde3;
+      --paper: #f7f5f0;
+      --white: #ffffff;
+      --navy: #0e2a43;
+      --gold: #8a6d3b;
+      --ok: #1f6b4a;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink);
+      font: 15px/1.5 "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif; }
+    .bar { background: var(--navy); color: #e8eef4; padding: 10px 28px; font-size: 11px;
+      letter-spacing: 0.14em; text-transform: uppercase; display: flex; justify-content: space-between; }
+    main { max-width: 980px; margin: 0 auto; padding: 28px 24px 64px; }
+    .kicker { color: var(--gold); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; }
+    h1 { font-family: "Source Serif 4", Georgia, serif; font-size: 28px; font-weight: 600;
+      line-height: 1.2; margin: 6px 0 8px; }
+    .sub { color: var(--muted); margin: 0 0 22px; }
+    .reco { background: var(--white); border-left: 4px solid var(--ok); padding: 16px 18px; margin: 0 0 22px; }
+    .reco strong { display: block; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ok); margin-bottom: 6px; }
+    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 0 28px; }
+    .kpi { background: var(--white); padding: 12px 14px; border: 1px solid var(--line); }
+    .kpi b { display: block; font-size: 20px; font-variant-numeric: tabular-nums; }
+    .kpi span { color: var(--muted); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+    h2 { font-family: "Source Serif 4", Georgia, serif; font-size: 18px; margin: 28px 0 10px;
+      border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    table { width: 100%; border-collapse: collapse; background: var(--white); font-variant-numeric: tabular-nums; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+    th { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    td.num, th.num { text-align: right; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    figure { margin: 0 0 16px; background: var(--white); border: 1px solid var(--line); padding: 10px 10px 8px; }
+    figure img { width: 100%; height: auto; display: block; }
+    figcaption { color: var(--muted); font-size: 12px; padding: 8px 4px 2px; }
+    .note { color: var(--muted); font-size: 12.5px; margin-top: 28px; }
+    footer { max-width: 980px; margin: 0 auto; padding: 0 24px 40px; color: var(--muted); font-size: 11px; }
+    @media (max-width: 800px) {
+      .kpis, .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media print {
+      .bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      figure { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <span>Confidential · Investment committee pack</span>
+    <span>ECO423 · Financial economics · 2026-09-22</span>
+  </div>
+  <main>
+    <div class="kicker">Coverage · Infosys (INFY.NS) · Comparator Mastercard (MA)</div>
+    <h1>FX-Hedged Expansion Desk</h1>
+    <p class="sub">Should the firm fund a USD 80m, 3-year expansion, and how should Treasury hedge year-1 USD receipts? Prices as of 2026-09-22 · pull 2026-09-22 00:26 UTC.</p>
+
+    <div class="reco">
+      <strong>Recommendation</strong>
+      On the labelled cash flows, the project clears a 10.96% CAPM WACC (NPV 0.71bn INR unhedged, 0.93bn on the forward path). The project ends after year 3 with zero salvage. Unhedged NPV reaches zero if every free cash flow is 8% lower. Those cash flows are a teaching case, not an Infosys forecast. Hedge year-1 receipts with a 25Δ collar, not a 100% forward, so a weaker rupee can still help. Both NPVs use the same WACC; the hedge changes the FX path only.
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><b>10.96%</b><span>CAPM WACC</span></div>
+      <div class="kpi"><b>10.96%</b><span>Cost of equity · β 0.81</span></div>
+      <div class="kpi"><b>+0.71bn</b><span>NPV unhedged (INR)</span></div>
+      <div class="kpi"><b>95.81 / 97.14</b><span>USDINR spot / 1y IRP fwd</span></div>
+    </div>
+
+    <h2>Required return and valuation</h2>
+    <table>
+      <thead>
+        <tr><th></th><th class="num">INFY vs Nifty</th><th class="num">MA vs S&amp;P</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Beta</td><td class="num">0.81</td><td class="num">1.05</td></tr>
+        <tr><td>Jensen α (ann.)</td><td class="num">1.92%</td><td class="num">1.39%</td></tr>
+        <tr><td>R²</td><td class="num">0.23</td><td class="num">0.53</td></tr>
+        <tr><td>Cost of equity</td><td class="num">10.96%</td><td class="num">10.22%</td></tr>
+        <tr><td>Risk-free</td><td class="num">6.50%</td><td class="num">4.96%</td></tr>
+        <tr><td>Labelled ERP (in ke)</td><td class="num">5.50%</td><td class="num">5.00%</td></tr>
+        <tr><td>Sample ERP</td><td class="num">4.86%</td><td class="num">11.16%</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Equity weight 100.0% (market cap / (market cap + total debt)). Reported debt is negligible, so WACC equals the cost of equity. The bond shows YTM and duration; it does not change this NPV. Factor ke 10.27%. Gordon 845.9 vs screen 1,051.4 (24.3% to model). Implied g 6.16%. Bond YTM used as kd; modified duration 5.38.</p>
+
+    <h2>Project NPV and Treasury hedge</h2>
+    <table>
+      <tbody>
+        <tr><td>NPV unhedged / IRP forward path</td><td class="num">+0.71bn / +0.93bn INR</td></tr>
+        <tr><td>Project IRR (unhedged INR CFs)</td><td class="num">15.98%</td></tr>
+        <tr><td>Salvage at year 3</td><td class="num">zero</td></tr>
+        <tr><td>FCF cut that sets unhedged NPV to zero</td><td class="num">8%</td></tr>
+        <tr><td>Year-1 USD notional</td><td class="num">USD 36m</td></tr>
+        <tr><td>25Δ put / collar net premium</td><td class="num">0.714 / 0.034 INR per USD</td></tr>
+        <tr><td>Asian vs vanilla 1y ATM call</td><td class="num">1.475 vs 2.514</td></tr>
+        <tr><td>Listed call INFY K=11.00 2026-11-20</td>
+            <td class="num">mid 0.600 · BS 0.600 · IV 37.0%</td></tr>
+        <tr><td>Greeks Δ / Γ / ν / Θ</td><td class="num">0.507 / 0.2475 / 1.735 / -2.231</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Prefer the 25Δ collar over 100% forwards: residual vol drops versus unhedged while keeping participation if USDINR rises (exporter-friendly). Use the Asian only if the desk will actually average monthly fixings; otherwise the vanilla put leg is cleaner.</p>
+
+    <h2>Walk-forward ML challenger</h2>
+    <table>
+      <thead>
+        <tr><th></th><th class="num">ML-MV</th><th class="num">Selected hist-MV</th><th class="num">Inverse vol</th><th class="num">1/N</th><th class="num">Nifty</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>OOS excess-return Sharpe</td><td class="num">0.25</td><td class="num">0.30</td>
+            <td class="num">0.09</td><td class="num">0.05</td><td class="num">0.22</td></tr>
+        <tr><td>Beta vs Nifty</td><td class="num">0.59</td><td class="num">0.69</td>
+            <td class="num">—</td><td class="num">—</td><td class="num">1.00</td></tr>
+        <tr><td>Jensen α (ann.)</td><td class="num">1.19%</td><td class="num">1.72%</td>
+            <td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+        <tr><td>Tracking error vs Nifty</td><td class="num">10.0%</td><td class="num">9.5%</td>
+            <td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+        <tr><td>Information ratio</td><td class="num">0.00</td><td class="num">0.09</td>
+            <td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+    <p class="note"><strong>Selected rule:</strong> monthly, long-only shrinkage mean-variance using trailing historical returns, with a 35% position cap. Average OOS weights: INFY 21% · HDFCBANK 24% · RELIANCE 18% · HINDUNILVR 12% · GOLDBEES 25%. INFY RMSE GB 0.0375 · Ridge 0.0349 · expanding mean 0.0349. ML-MV beat Nifty, but did not beat the simpler historical-MV rule; GB also failed to improve INFY forecast error (sign hit near 50%). The historical-MV rule is therefore selected, while ML stays as a documented challenger and robustness test.</p>
+
+    <h2>Exhibits</h2>
+    <div class="grid">
+      <figure>
+  <img src="../exhibits/01_frontier_cml.png" alt="Diversified book: mean-variance frontier and two-fund CML">
+  <figcaption>Diversified book: mean-variance frontier and two-fund CML</figcaption>
+</figure><figure>
+  <img src="../exhibits/02_sml.png" alt="Security market line vs realised average return">
+  <figcaption>Security market line vs realised average return</figcaption>
+</figure><figure>
+  <img src="../exhibits/03_factor_ke.png" alt="INFY factor contribution to cost of equity">
+  <figcaption>INFY factor contribution to cost of equity</figcaption>
+</figure><figure>
+  <img src="../exhibits/04_npv_tornado.png" alt="USD expansion NPV: WACC and FX sensitivity">
+  <figcaption>USD expansion NPV: WACC and FX sensitivity</figcaption>
+</figure><figure>
+  <img src="../exhibits/05_crr_vs_bs.png" alt="Binomial CRR converges to Black–Scholes">
+  <figcaption>Binomial CRR converges to Black–Scholes</figcaption>
+</figure><figure>
+  <img src="../exhibits/06_greeks.png" alt="Listed call: delta and gamma vs spot">
+  <figcaption>Listed call: delta and gamma vs spot</figcaption>
+</figure><figure>
+  <img src="../exhibits/07_hedge_pnl.png" alt="Year-1 USD receipts: hedge P&amp;L in INR">
+  <figcaption>Year-1 USD receipts: hedge P&amp;L in INR</figcaption>
+</figure><figure>
+  <img src="../exhibits/08_ml_nav.png" alt="Walk-forward allocation: ML μ vs historical μ vs Nifty">
+  <figcaption>Walk-forward allocation: ML μ vs historical μ vs Nifty</figcaption>
+</figure>
+    </div>
+  </main>
+  <footer>
+    ECO423 engines: OLS CAPM, market+USDINR factor, two-fund CML, WACC/NPV, Gordon, IRP FX forward, CRR/Black–Scholes, Greeks, Asian MC, walk-forward Ridge/GB.
+    Illustrative capex and labelled ERP. India 10Y FRED pull failed; using labelled fallback 6.50%.
+    Not a solicitation. Public data only.
+  </footer>
+</body>
+</html>

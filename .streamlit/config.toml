@@ -1,0 +1,9 @@
+# Streamlit Community Cloud / general Python deploy
+# https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started
+
+[theme]
+primaryColor = "#0e2a43"
+backgroundColor = "#f7f5f0"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#122033"
+font = "sans serif"
