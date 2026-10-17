@@ -12,7 +12,7 @@ import pandas as pd
 import streamlit as st
 
 from . import config as C
-from .dashboard_content import ASSET_NAMES, GLOSSARY, PAGE_FILES, PAGES, STRATEGY_NAMES, STYLES
+from .dashboard_content import ASSET_NAMES, GLOSSARY, PAGE_FILES, PAGE_SLUGS, PAGES, STRATEGY_NAMES, STYLES, section_styles
 from .fx_forward import price_forward
 from .greeks import bs_greeks
 from .hedge import hedge_table
@@ -21,7 +21,7 @@ from .wacc import irr, npv, usd_project_inr_cashflows
 
 SUMMARY = C.EXHIBIT_DIR / "summary.json"
 CRORE = 10_000_000.0
-COLORS = ["#243f5b", "#6886a3", "#a88853", "#54786a", "#969fa9"]
+COLORS = ["#245ca6", "#14786e", "#a06419", "#7050a0", "#b35252"]
 
 
 def pct(value: float, digits: int = 2) -> str:
@@ -57,9 +57,10 @@ def eyebrow(text: str) -> None:
 
 
 def intro(title: str, description: str, step: str) -> None:
-    eyebrow(step)
-    st.title(title)
-    st.markdown(f'<p class="intro">{escape(description)}</p>', unsafe_allow_html=True)
+    with st.container(key="page_intro"):
+        eyebrow(step)
+        st.title(title)
+        st.markdown(f'<p class="intro">{escape(description)}</p>', unsafe_allow_html=True)
 
 
 def chart_image(filename: str, caption: str) -> None:
@@ -180,14 +181,14 @@ def render_home(m: dict) -> None:
             "Portfolio analysis",
         ),
     ]
-    for title, finding, description, page, button in rows:
-        left, right = st.columns([3, 1], gap="large")
-        with left:
-            st.markdown(f"**{title} · {finding}**")
-            st.write(description)
-        with right:
-            st.button(button, on_click=navigate, args=(page,), key=f"card_{page}", width="stretch")
-        st.divider()
+    for index, (title, finding, description, page, button) in enumerate(rows):
+        with st.container(key=f"finding_{index}"):
+            left, right = st.columns([3, 1], gap="large")
+            with left:
+                st.markdown(f"**{title} · {finding}**")
+                st.write(description)
+            with right:
+                st.button(button, on_click=navigate, args=(page,), key=f"card_{page}", width="stretch")
     st.caption(
         "The five-investment portfolio is an independent experiment. "
         "It does not fund or determine the company's expansion."
@@ -315,7 +316,7 @@ def render_scenario_lab(m: dict) -> None:
         plot = pd.DataFrame({"When": labels, "Value today (₹ crore)": np.array(today_values) / CRORE})
         chart = alt.Chart(plot).mark_bar(cornerRadiusTopLeft=4, cornerRadiusTopRight=4).encode(
             x=alt.X("When:N", sort=labels, title=None), y="Value today (₹ crore):Q",
-            color=alt.condition(alt.datum["Value today (₹ crore)"] < 0, alt.value("#b4664d"), alt.value(COLORS[0])),
+            color=alt.condition(alt.datum["Value today (₹ crore)"] < 0, alt.value("#b35252"), alt.value(COLORS[1])),
             tooltip=["When", alt.Tooltip("Value today (₹ crore):Q", format=",.2f")],
         ).properties(height=250)
         st.altair_chart(chart, width="stretch")
@@ -649,20 +650,19 @@ def render_methods(m: dict) -> None:
 
 def main() -> None:
     st.set_page_config(page_title="Asset Pricing and Hedging", layout="wide", initial_sidebar_state="auto")
-    st.markdown(STYLES, unsafe_allow_html=True)
     m = load_summary()
     if not m:
         st.error("The saved project results are unavailable. Please try again later.")
         st.stop()
-    slugs = ("", "expansion", "dollar-protection", "portfolio", "options", "methods")
     pages = {
         title: st.Page(C.ROOT / "views" / f"{filename}.py", title=title, url_path=slug, default=i == 0)
-        for i, (title, filename, slug) in enumerate(zip(PAGES, PAGE_FILES, slugs))
+        for i, (title, filename, slug) in enumerate(zip(PAGES, PAGE_FILES, PAGE_SLUGS))
     }
     current = st.navigation(list(pages.values()), position="hidden")
     requested = st.session_state.pop("pending_section", None)
     if requested in pages and requested != current.title:
         st.switch_page(pages[requested])
+    st.markdown(STYLES + section_styles(current.title), unsafe_allow_html=True)
     render_sidebar(m, pages)
     current.run()
     st.markdown(f'<div class="app-footer">Asset Pricing &amp; Hedging · ECO423, IIT Kanpur · Saved snapshot {escape(date_label(m["asof"]))} · Illustrative educational analysis</div>', unsafe_allow_html=True)

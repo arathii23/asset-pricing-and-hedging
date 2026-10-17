@@ -2,8 +2,8 @@
 # https://docs.streamlit.io/deploy/streamlit-community-cloud/get-started
 
 [theme]
-primaryColor = "#243f5b"
+primaryColor = "#245ca6"
 backgroundColor = "#ffffff"
-secondaryBackgroundColor = "#f3f5f7"
+secondaryBackgroundColor = "#f0f5fb"
 textColor = "#203044"
 font = "sans serif"

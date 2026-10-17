@@ -11,7 +11,7 @@ from streamlit.testing.v1 import AppTest
 
 from src import config as C
 from src.dashboard import project_scenario
-from src.dashboard_content import PAGE_FILES
+from src.dashboard_content import PAGE_FILES, PAGES, SECTION_THEMES
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -49,6 +49,20 @@ class DashboardTests(unittest.TestCase):
         for page in PAGE_FILES:
             app.switch_page(f"views/{page}.py").run()
             self.assertFalse(app.exception, page)
+            accent = SECTION_THEMES[PAGES[PAGE_FILES.index(page)]][0]
+            self.assertTrue(any(f"--section-accent: {accent}" in item.value for item in app.markdown))
+
+    def test_section_colours_have_readable_text_contrast(self):
+        self.assertEqual(set(SECTION_THEMES), set(PAGES))
+
+        def luminance(colour):
+            channels = [int(colour[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+            linear = [c / 12.92 if c <= .04045 else ((c + .055) / 1.055) ** 2.4 for c in channels]
+            return sum(c * weight for c, weight in zip(linear, (.2126, .7152, .0722)))
+
+        for page, (accent, background, _) in SECTION_THEMES.items():
+            contrast = (luminance(background) + .05) / (luminance(accent) + .05)
+            self.assertGreaterEqual(contrast, 4.5, page)
 
     def test_presets_reset_and_scenario_survives_navigation(self):
         app = self.app(1)

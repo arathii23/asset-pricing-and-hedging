@@ -3,6 +3,33 @@
 PAGES = ("Overview", "Expansion & valuation", "Currency hedging", "Portfolio analysis", "Option pricing", "Methods & data")
 
 PAGE_FILES = ("overview", "expansion", "hedging", "portfolio", "options", "methods")
+PAGE_SLUGS = ("", "expansion", "dollar-protection", "portfolio", "options", "methods")
+
+# Accent, light background, and border. Colour identifies sections, not outcomes.
+SECTION_THEMES = {
+    "Overview": ("#245ca6", "#eef5ff", "#cbdcf2"),
+    "Expansion & valuation": ("#245ca6", "#eef5ff", "#cbdcf2"),
+    "Currency hedging": ("#14786e", "#edf8f5", "#c3e2db"),
+    "Portfolio analysis": ("#7050a0", "#f5f0fb", "#ddcfee"),
+    "Option pricing": ("#a06419", "#fff7eb", "#ecd9b8"),
+    "Methods & data": ("#376a80", "#eff6f9", "#cedee7"),
+}
+
+
+def section_styles(page: str) -> str:
+    accent, background, border = SECTION_THEMES[page]
+    slug = PAGE_SLUGS[PAGES.index(page)]
+    return (
+        '<style>.stApp {'
+        f'--section-accent: {accent}; --section-wash: {background}; '
+        f'--section-border: {border};'
+        '}'
+        f'[data-testid="stPageLink"] a[href="{slug}"] {{'
+        'background: var(--section-wash); color: var(--section-accent); '
+        'box-shadow: inset 3px 0 0 var(--section-accent); font-weight: 600;'
+        '}</style>'
+    )
+
 
 ASSET_NAMES = {
     "INFY.NS": "Infosys · IT services",
@@ -55,20 +82,38 @@ STYLES = """
 <style>
 .block-container { max-width: 1240px; padding-top: 2.5rem; padding-bottom: 3rem; }
 [data-testid="stMain"] { overflow-anchor: none; }
-[data-testid="stSidebar"] { background: #f3f5f7; border-right: 1px solid #e3e7ec; }
-[data-testid="stMetricValue"] { font-size: clamp(1.35rem, 2vw, 1.8rem); font-variant-numeric: tabular-nums; font-weight: 550; }
+[data-testid="stSidebar"] { background: #f0f5fb; border-right: 1px solid #d8e3f0; }
+[data-testid="stSidebar"] h3 { color: #214b78; }
+[data-testid="stPageLink"] a { border-radius: 5px; }
+[data-testid="stPageLink"] a:hover { background: #e4edf9; }
+.st-key-page_intro { border-left: 4px solid var(--section-accent); background: var(--section-wash); border-radius: 0 7px 7px 0; padding: 1.1rem 1.3rem; margin-bottom: .7rem; }
+[data-testid="stMetric"] { min-height: 120px; height: 100%; background: var(--section-wash); border: 1px solid var(--section-border); border-top: 3px solid var(--section-accent); border-radius: 7px; padding: .85rem 1rem; }
+[data-testid="stMetricValue"] { color: var(--section-accent); font-size: clamp(1.35rem, 2vw, 1.8rem); font-variant-numeric: tabular-nums; font-weight: 550; }
 [data-testid="stMetricLabel"] { white-space: normal; color: #536274; }
-h1 { font-size: 2rem !important; font-weight: 600 !important; letter-spacing: -.025em; }
-h2 { font-size: 1.4rem !important; font-weight: 600 !important; letter-spacing: -.015em; }
+h1 { color: #203f65 !important; font-size: 2rem !important; font-weight: 600 !important; letter-spacing: -.025em; }
+h2 { color: var(--section-accent); font-size: 1.4rem !important; font-weight: 600 !important; letter-spacing: -.015em; }
 h3 { font-size: 1.15rem !important; font-weight: 600 !important; letter-spacing: -.01em; }
+[data-testid="stMain"] h3 { color: var(--section-accent); }
 h4 { font-size: 1rem !important; font-weight: 600 !important; }
 [data-testid="stButton"] button { border-radius: 4px; }
-.eyebrow { color: #687788; font-weight: 500; font-size: .8rem; letter-spacing: .02em; margin: .35rem 0 .6rem; }
+[data-testid="stButton"] button[kind="secondary"]:hover { color: var(--section-accent); border-color: var(--section-accent); background: var(--section-wash); }
+[data-testid="stTabs"] [aria-selected="true"] { color: var(--section-accent); }
+.eyebrow { color: var(--section-accent); font-weight: 600; font-size: .8rem; letter-spacing: .02em; margin: .1rem 0 .35rem; }
 .intro { max-width: 850px; color: #536274; font-size: 1rem; line-height: 1.65; }
-.case-note { border-left: 2px solid #8999ab; padding: .6rem .9rem; background: #f5f7f9; color: #536274; margin: 1rem 0; font-size: .88rem; line-height: 1.6; }
+.st-key-page_intro .intro { margin-bottom: 0; }
+.case-note { border-left: 3px solid #ba8733; padding: .7rem 1rem; background: #fff8eb; color: #6d542c; margin: 1rem 0; font-size: .88rem; line-height: 1.6; }
+.st-key-finding_0, .st-key-finding_1, .st-key-finding_2 { border-left: 3px solid; border-radius: 0 5px 5px 0; padding: 1rem 1.1rem; margin-bottom: .6rem; }
+.st-key-finding_0 { border-color: #245ca6; background: #f3f7fe; }
+.st-key-finding_1 { border-color: #14786e; background: #f1f9f6; }
+.st-key-finding_2 { border-color: #7050a0; background: #f7f3fc; }
+.st-key-finding_0 strong { color: #245ca6; }
+.st-key-finding_1 strong { color: #14786e; }
+.st-key-finding_2 strong { color: #7050a0; }
 .app-footer { color: #738091; font-size: .78rem; margin-top: 1.2rem; border-top: 1px solid #e3e7ec; padding-top: .85rem; }
 @media (max-width: 640px) {
   .block-container { padding-top: 1.2rem; padding-left: 1rem; padding-right: 1rem; }
+  .st-key-page_intro { padding: .9rem 1rem; }
+  .st-key-finding_0, .st-key-finding_1, .st-key-finding_2 { padding: .85rem .9rem; }
   h1 { font-size: 1.6rem !important; }
   .intro { font-size: 1rem; }
   [data-testid="stMetricValue"] { font-size: 1.4rem; }
