@@ -55,10 +55,16 @@ def build_app(pipeline: Pipeline):
     css = """.gradio-container {max-width:1100px!important} .source-card {border:1px solid #cbd5e1;
     border-left:4px solid #0f766e;border-radius:8px;padding:14px;margin:12px 0}
     .source-card pre {white-space:pre-wrap;font-family:inherit} .source-card small {color:#475569}
+    .dark .source-card small {color:#cbd5e1}
     #intro {border-bottom:3px solid #0f766e;padding-bottom:12px} """
     with gr.Blocks(
         title="Finance RAG · Local learning desk",
-        theme=gr.themes.Soft(primary_hue="teal", secondary_hue="blue"),
+        theme=gr.themes.Soft(
+            primary_hue="teal",
+            secondary_hue="blue",
+            font=["ui-sans-serif", "system-ui", "sans-serif"],
+            font_mono=["ui-monospace", "monospace"],
+        ),
         css=css,
         analytics_enabled=False,
     ) as demo:
