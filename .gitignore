@@ -7,3 +7,6 @@ data/cache/
 .env
 .env.*
 !.env.example
+local_chatbot/.cache/
+local_chatbot/artifacts/
+local_chatbot/evaluation/private_runs/

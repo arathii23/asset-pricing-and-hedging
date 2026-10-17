@@ -1,0 +1,9 @@
+# Separate from the Streamlit dashboard's environment.
+# These bounded versions are resolved/tested together; see requirements-tested.txt.
+numpy>=2.1,<3
+torch>=2.8,<3
+transformers>=4.57,<5
+sentence-transformers>=5.1,<6
+faiss-cpu>=1.12,<2
+gradio>=5.49,<6
+psutil>=7,<8

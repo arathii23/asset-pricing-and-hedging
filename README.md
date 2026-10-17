@@ -1,5 +1,19 @@
 # Asset Pricing and Hedging
 
+## New: local finance RAG chatbot
+
+Run a separate, downloadable learning assistant with **MiniLM → FAISS → Qwen**
+and a Gradio interface. No hosted API key is required. Inspect the retrieved
+notes and evidence prompt alongside each answer.
+
+**[Chatbot setup and README](local_chatbot/README.md)** ·
+**[Learn the pipeline from basics](local_chatbot/LEARNING_GUIDE.md)**
+
+The local chatbot uses its own environment and does not change the Streamlit
+dashboard or original finance results. Small-model answers still need source checks.
+
+---
+
 An investment-committee style project for a dollar-earning firm. It answers two questions with public market data:
 
 1. Should the firm fund a 3-year expansion?
