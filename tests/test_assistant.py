@@ -16,7 +16,7 @@ from unittest.mock import Mock, patch
 from streamlit.testing.v1 import AppTest
 
 from src.assistant import (MAX_SESSION_CALLS, AssistantSettings, NoRedirect, ProcessBudget, ProviderError,
-                           answer_question, evidence_for, gemini_request, parse_response, prompt_payload,
+                           answer_question, classify_http_error, evidence_for, gemini_request, parse_response, prompt_payload,
                            safe_history, settings_from)
 from src.knowledge import KnowledgeBase
 
@@ -73,6 +73,8 @@ class AssistantTests(unittest.TestCase):
             self.assertEqual(envelope["active_version"], "resume_v1")
             self.assertFalse(envelope["runtime"]["semantic_retrieval"])
             self.assertNotIn("temperature", payload["generationConfig"])
+            self.assertEqual(payload["generationConfig"]["responseMimeType"], "application/json")
+            self.assertIn("responseJsonSchema", payload["generationConfig"])
             self.assertIn("source_ids", envelope["evidence"][0])
             return provider_response()
         result = self.ask(transport=transport)
@@ -181,6 +183,17 @@ class AssistantTests(unittest.TestCase):
                 gemini_request(self.settings, {})
         self.assertEqual(str(caught.exception), "authentication")
         self.assertNotIn(FAKE_KEY, str(caught.exception))
+
+    def test_bad_request_errors_use_fixed_diagnostics_not_raw_messages(self):
+        for reason, message, expected in (
+            ("API_KEY_INVALID", "do not expose " + FAKE_KEY, "authentication"),
+            ("", "Unknown name responseFormat at generation_config", "request_schema"),
+            ("", "User location is not supported", "region"),
+            ("", "private provider detail " + FAKE_KEY, "request_configuration"),
+        ):
+            body = {"error": {"message": message, "details": [{"reason": reason}]}}
+            error = urllib.error.HTTPError("https://example.invalid", 400, "Bad request", {}, io.BytesIO(json.dumps(body).encode()))
+            self.assertEqual(classify_http_error(error), expected)
 
 
 class AssistantUITests(unittest.TestCase):
