@@ -14,7 +14,7 @@ The finance methods follow a standard financial-economics course: portfolios, CA
 
 | Piece | Where |
 |---|---|
-| Interactive dashboard (IC decision, scenario analysis, portfolio, option pricer) | `app.py` |
+| Guided dashboard (project story, expansion, dollar protection, portfolio, options, glossary) | `app.py` |
 | Static coverage note | `memo/ic_pack.html` |
 | Written IC note | `memo/ic_note.md` |
 | Charts and tables | `exhibits/` |
@@ -31,10 +31,31 @@ streamlit run app.py
 
 Open the local URL Streamlit prints (usually `http://localhost:8501`).
 
-The dashboard keeps the published base case locked. Its scenario lab can flex
-capex, free cash flow, WACC, FX and hedge path without overwriting the reported
-result. Portfolio tables, weights, option prices and downloadable outputs are
-read from the generated exhibits rather than duplicated in the app.
+## Explore the dashboard
+
+The app opens with an **Overview** of the case, its cash flows, and the main findings.
+Definitions are available alongside the analysis. Use the sidebar to move between sections:
+
+1. **Expansion & valuation:** review future cash flows, try a cash-flow reduction or a stronger rupee, and inspect the calculation. Separate tabs explain the required return and Gordon share valuation.
+2. **Currency hedging:** compare unhedged receipts, a forward, a put, and a collar at a chosen future exchange rate. The USD 36m hedge notional is separate from the expansion's USD 32m year-one free cash flow.
+3. **Portfolio analysis:** compare five allocation rules, understand their risk and return, and inspect average versus latest holdings.
+4. **Option pricing:** vary FX option inputs, see prices per dollar, and open explanations of Greeks and the separate saved Infosys ADR example.
+5. **Methods & data:** search a plain-language glossary, distinguish assumptions from observed data, and download the report and exact results.
+
+Rupee totals use **₹ crore** (₹1 crore = ₹10 million); dollar totals use **USD million**.
+Rates are entered as percentages. Detailed formulas and statistics sit behind expanders.
+
+Scenario and pricing controls calculate in memory and never overwrite the published
+base case. In the expansion scenario, an FX change affects **future receipts only**;
+today's capex stays converted at the saved spot rate. In a forward-path scenario,
+the slider represents different rates agreed at the outset, not repricing an existing
+locked forward. The project NPV comparison is not a collar-valued NPV.
+
+The saved exhibits supply the published portfolio statistics and weights. Only the
+selected sidebar section renders, so opening the home page does not run option simulations.
+The app makes no live data requests or model-training calls when a visitor opens it.
+Each section has a direct URL and uses native page navigation. Page entry files are in `views/`;
+presentation and shared reference material are in `src/dashboard.py` and `src/dashboard_content.py`.
 
 The dashboard uses the saved results in `exhibits/`. To recompute everything from current market data:
 
@@ -79,6 +100,16 @@ exhibits/             Charts and tables from the last run
 ```
 
 Assumptions you may want to change (project size, growth, tax, equity risk premium) are named in `src/config.py`.
+
+## Verify the dashboard
+
+The offline checks cover all pages, scenario presets and reset, input persistence,
+forward-path comparisons, FX direction, option sensitivity, glossary search, and
+preservation of the saved outputs:
+
+```bash
+python -m unittest discover -s tests -v
+```
 
 ## Scope
 
