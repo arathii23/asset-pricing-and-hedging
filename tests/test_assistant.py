@@ -194,6 +194,9 @@ class AssistantTests(unittest.TestCase):
             body = {"error": {"message": message, "details": [{"reason": reason}]}}
             error = urllib.error.HTTPError("https://example.invalid", 400, "Bad request", {}, io.BytesIO(json.dumps(body).encode()))
             self.assertEqual(classify_http_error(error), expected)
+        for status in (500, 502, 503, 504):
+            error = urllib.error.HTTPError("https://example.invalid", status, FAKE_KEY, {}, io.BytesIO())
+            self.assertEqual(classify_http_error(error), f"service_{status}")
 
 
 class AssistantUITests(unittest.TestCase):

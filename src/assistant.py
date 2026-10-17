@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 from .knowledge import FAQ_LOOKUP, KnowledgeBase, check_version, normalise, tokens
 
 DEFAULT_MODEL = "gemini-3.8-flash"
+ASSISTANT_BUILD = "2026-10-17.3"
 MAX_QUESTION = 1600
 MAX_HISTORY = 6
 MAX_SESSION_CALLS = 15
@@ -109,7 +110,7 @@ def classify_http_error(error: urllib.error.HTTPError) -> str:
         except (ValueError, TypeError, AttributeError, OSError):
             pass
         return "request_configuration"
-    return "service"
+    return f"service_{error.code}" if error.code in (500, 502, 503, 504) else "service"
 
 
 def gemini_request(settings: AssistantSettings, payload: dict) -> dict:
@@ -255,6 +256,10 @@ ERROR_TEXT = {
     "region": "Gemini reports that requests from this server location are not supported. The owner should check provider availability.",
     "invalid_response": "The AI reply did not pass the response/citation checks, so it has not been shown.",
     "service": "Gemini is temporarily unavailable for this request.",
+    "service_500": "Gemini returned a server error (HTTP 500). Project notes remain available; please try later.",
+    "service_502": "The Gemini gateway returned HTTP 502. Project notes remain available; please try later.",
+    "service_503": "Gemini is unavailable (HTTP 503). Project notes remain available; please try later.",
+    "service_504": "The Gemini gateway timed out (HTTP 504). Project notes remain available; please try later.",
 }
 
 

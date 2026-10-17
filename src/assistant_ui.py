@@ -6,7 +6,7 @@ import os
 
 import streamlit as st
 
-from .assistant import MAX_QUESTION, SECRET_PATTERN, answer_question, settings_from
+from .assistant import ASSISTANT_BUILD, MAX_QUESTION, SECRET_PATTERN, answer_question, settings_from
 from .knowledge import KnowledgeBase
 
 VERSION_LABELS = {"resume_v1": "Original résumé experiment", "review_v2": "Later reviewed extension · October 2026"}
@@ -77,7 +77,7 @@ def render_assistant(summary: dict | None = None) -> None:
     dashboard_version = "review_v2" if (summary or {}).get("audit_version") == 2 else "resume_v1"
     if dashboard_version != version:
         st.info(f"Chat context: {VERSION_LABELS[version]}. Dashboard charts: {VERSION_LABELS[dashboard_version]}. Select the matching version to discuss the chart values.")
-    st.caption(f"Evidence: {VERSION_LABELS[version]} · Market snapshot: 22 September 2026 · Educational, not personal investment advice")
+    st.caption(f"Evidence: {VERSION_LABELS[version]} · Market snapshot: 22 September 2026 · Assistant build: {ASSISTANT_BUILD}")
     if settings.configured:
         st.caption(f"Gemini is configured · model: {settings.model} · connection is checked when you ask an AI question")
     else:
