@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "default_version": "resume_v1",
+  "versions": {
+    "resume_v1": {
+      "label": "Original submitted-resume experiment",
+      "git_revision": "395858d928c65da39b17c92d9f3b135a46471082",
+      "market_asof": "2026-09-22",
+      "evaluation_label_start": "2021-03-05",
+      "evaluation_label_end": "2026-09-25",
+      "period_note": "Final label is a partial week; actual daily observations stop 22 September. Dates follow original resampling/next-period allocation, not a 25 September observation.",
+      "status": "Preserved original code/output, not independently audited market performance"
+    },
+    "review_v2": {
+      "label": "Later local reviewed extension",
+      "reviewed_at": "2026-10-17",
+      "market_asof": "2026-09-22",
+      "evaluation_label_start": "2021-03-05",
+      "evaluation_label_end": "2026-09-18",
+      "period_note": "Only completed weeks; separate later method and results.",
+      "status": "Local work, not evidence of what was submitted or publicly deployed"
+    }
+  },
+  "sources": {
+    "editorial": {"kind": "curated_explanation", "description": "Beginner explanations authored for this knowledge base; not independent evidence of performance."},
+    "owner_context": {"kind": "user_supplied", "description": "User supplied project/course attribution and resume claims; personal contribution, chronology and endorsements are not verified by code."},
+    "original": {"kind": "pinned_repository", "revision": "395858d928c65da39b17c92d9f3b135a46471082", "description": "Frozen code, summary and metrics from the original committed implementation."},
+    "review": {"kind": "local_snapshot", "description": "Explicit capture of the later local reviewed code and outputs; not deployed-state verification."},
+    "nse_tri": {"kind": "official_reference", "url": "https://www.niftyindices.com/resources/index-concepts/total-return-index", "checked_on": "2026-10-17"},
+    "gemini_embeddings": {"kind": "official_reference", "url": "https://ai.google.dev/gemini-api/docs/embeddings", "checked_on": "2026-10-17"},
+    "gemini_keys": {"kind": "official_reference", "url": "https://ai.google.dev/gemini-api/docs/api-key", "checked_on": "2026-10-17"},
+    "streamlit_secrets": {"kind": "official_reference", "url": "https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management", "checked_on": "2026-10-17"}
+  },
+  "documents": [
+    {"id": "assistant", "path": "documents/00_assistant.md", "version": "common", "title": "Assistant identity and help", "sources": ["editorial"], "tags": ["who are you", "what can you do", "hi", "hello", "capabilities", "Gemini", "model", "memory", "API key"]},
+    {"id": "project", "path": "documents/01_project.md", "version": "common", "title": "Project overview and website navigation", "sources": ["editorial", "owner_context", "original", "review"], "tags": ["purpose", "start", "website", "navigation", "author", "Infosys", "ECO423"]},
+    {"id": "ownership", "path": "documents/02_ownership.md", "version": "common", "title": "Shares, investors, borrowing and business cash flows", "sources": ["editorial"], "tags": ["share", "shareholder", "owner", "loan", "debt", "cash", "expansion", "customers", "FCF"]},
+    {"id": "cash_valuation", "path": "documents/03_cash_valuation.md", "version": "common", "title": "Discounting, DCF and NPV", "sources": ["editorial", "original", "review"], "tags": ["discount", "present value", "NPV", "DCF", "IRR", "crore", "million", "billion", "8.37"]},
+    {"id": "required_return", "path": "documents/04_required_return.md", "version": "common", "title": "Expected return, CAPM, WACC and Gordon valuation", "sources": ["editorial", "original", "review"], "tags": ["10.96", "6.5", "5.5", "CAPM", "WACC", "beta", "risk", "Gordon", "dividend", "factor"]},
+    {"id": "hedging", "path": "documents/05_hedging.md", "version": "common", "title": "Dollar receipts, currency risk and hedge choices", "sources": ["editorial", "original", "review"], "tags": ["hedge", "collar", "USDINR", "forward", "currency", "receipt", "25 delta", "basis"]},
+    {"id": "options", "path": "documents/06_options.md", "version": "common", "title": "Options, binomial, Black-Scholes, Greeks and average-rate pricing", "sources": ["editorial", "original", "review"], "tags": ["binomial", "Black Scholes", "CRR", "Greek", "vega", "theta", "Asian", "Monte Carlo", "calibration"]},
+    {"id": "portfolio", "path": "documents/07_portfolio.md", "version": "common", "title": "Portfolio allocation and ML", "sources": ["editorial", "original", "review", "nse_tri"], "tags": ["Ridge", "gradient boosting", "Sharpe", "walk forward", "features", "weights", "Nifty", "holdout", "cost"]},
+    {"id": "resume_results", "path": "documents/08_resume_v1.md", "version": "resume_v1", "title": "Original resume experiment: recorded results and method", "sources": ["original"], "tags": ["original", "resume", "0.30", "0.22", "calculation", "8.37", "Sharpe", "NPV"]},
+    {"id": "review_results", "path": "documents/09_review_v2.md", "version": "review_v2", "title": "Later local review: separate results and method", "sources": ["review"], "tags": ["later", "review", "grid", "Ridge", "scaling", "drift", "average put"]},
+    {"id": "evidence", "path": "documents/10_evidence.md", "version": "common", "title": "Evidence, dates, limitations and missing records", "sources": ["owner_context", "original", "review", "editorial"], "tags": ["limitations", "2025", "2026", "date", "September", "provenance", "resume", "missing", "defend"]},
+    {"id": "rag", "path": "documents/11_rag.md", "version": "common", "title": "RAG design, current status and safe Gemini setup", "sources": ["editorial", "gemini_embeddings", "gemini_keys", "streamlit_secrets"], "tags": ["RAG", "chatbot", "training", "embedding", "Gemini", "API", "privacy", "key", "evaluation"]}
+  ]
+}

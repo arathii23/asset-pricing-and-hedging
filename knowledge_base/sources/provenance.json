@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-10-17T14:05:11.339841+00:00",
+  "policy": "Freeze once. No private files, API keys, recursive ingestion or raw source-code execution.",
+  "files": [
+    {
+      "path": "sources/resume_v1/exhibits/summary.json",
+      "version": "resume_v1",
+      "sha256": "4c8eded4476c295ab31f82aa103b2bf52a054f8de981b9f2fa08fdd7ec901755",
+      "origin": {
+        "kind": "git",
+        "revision": "395858d928c65da39b17c92d9f3b135a46471082",
+        "repository_path": "exhibits/summary.json"
+      }
+    },
+    {
+      "path": "sources/resume_v1/exhibits/ml_backtest.csv",
+      "version": "resume_v1",
+      "sha256": "47bfa0da46d00bf3f593fdf29fc8b47ab8a15da08bf0754e72b0a1a1eade4c16",
+      "origin": {
+        "kind": "git",
+        "revision": "395858d928c65da39b17c92d9f3b135a46471082",
+        "repository_path": "exhibits/ml_backtest.csv"
+      }
+    },
+    {
+      "path": "sources/resume_v1/exhibits/ml_infy_oos.csv",
+      "version": "resume_v1",
+      "sha256": "021cfc6d2dfe5bceec7de1bc88647a88dc2a88815b641fce23ad972eafbc134a",
+      "origin": {
+        "kind": "git",
+        "revision": "395858d928c65da39b17c92d9f3b135a46471082",
+        "repository_path": "exhibits/ml_infy_oos.csv"
+      }
+    },
+    {
+      "path": "sources/resume_v1/src/config.py",
+      "version": "resume_v1",
+      "sha256": "e5364e2b76b554de634dd9c01f04e2efd19660aad85f1acf54ed59c8fcaa3f38",
+      "origin": {
+        "kind": "git",
+        "revision": "395858d928c65da39b17c92d9f3b135a46471082",
+        "repository_path": "src/config.py"
+      }
+    },
+    {
+      "path": "sources/resume_v1/src/ml.py",
+      "version": "resume_v1",
+      "sha256": "f9824fb4269d5caec81047f63530e48665d020129aa5e04f0217938e4bca5e4a",
+      "origin": {
+        "kind": "git",
+        "revision": "395858d928c65da39b17c92d9f3b135a46471082",
+        "repository_path": "src/ml.py"
+      }
+    },
+    {
+      "path": "sources/resume_v1/src/portfolio.py",
+      "version": "resume_v1",
+      "sha256": "208a9e75b9e02540ae22ed45bcc66f93b1aa491b23ac17bd1cee17f64e88929d",
+      "origin": {
+        "kind": "git",
+        "revision": "395858d928c65da39b17c92d9f3b135a46471082",
+        "repository_path": "src/portfolio.py"
+      }
+    },
+    {
+      "path": "sources/resume_v1/src/options.py",
+      "version": "resume_v1",
+      "sha256": "3b6027f37818c89ce81c013739f676c842f2ffb18242be6bf36914c484dbd64c",
+      "origin": {
+        "kind": "git",
+        "revision": "395858d928c65da39b17c92d9f3b135a46471082",
+        "repository_path": "src/options.py"
+      }
+    },
+    {
+      "path": "sources/resume_v1/src/returns.py",
+      "version": "resume_v1",
+      "sha256": "fe0bc6fb3218a8df5fc74a582ba7dd8fcc1cb0b8a1a1fd8d834578100ac05cd6",
+      "origin": {
+        "kind": "git",
+        "revision": "395858d928c65da39b17c92d9f3b135a46471082",
+        "repository_path": "src/returns.py"
+      }
+    },
+    {
+      "path": "sources/resume_v1/src/factors.py",
+      "version": "resume_v1",
+      "sha256": "66f8d232436dc68dea01b4f7f4916b0a7aa083687277d531634e0b50c2f6c1c0",
+      "origin": {
+        "kind": "git",
+        "revision": "395858d928c65da39b17c92d9f3b135a46471082",
+        "repository_path": "src/factors.py"
+      }
+    },
+    {
+      "path": "sources/resume_v1/run_ic_pack.py",
+      "version": "resume_v1",
+      "sha256": "c862d599775210644998ec23d71e5fdaf80b97725a3ff24bc632f41352ab366b",
+      "origin": {
+        "kind": "git",
+        "revision": "395858d928c65da39b17c92d9f3b135a46471082",
+        "repository_path": "run_ic_pack.py"
+      }
+    },
+    {
+      "path": "sources/review_v2/exhibits/summary.json",
+      "version": "review_v2",
+      "sha256": "4a24e87295eebe9c6f5e42051726ae1f35b863aa4bd320a01c7ce7c35bcd6455",
+      "origin": {
+        "kind": "local_review",
+        "repository_path": "exhibits/summary.json",
+        "note": "Local snapshot, not verification of public deployment"
+      }
+    },
+    {
+      "path": "sources/review_v2/exhibits/ml_backtest.csv",
+      "version": "review_v2",
+      "sha256": "b2ad900fc87c999b71978b01a9dd0574981460130cf7931780f10768687d9dd8",
+      "origin": {
+        "kind": "local_review",
+        "repository_path": "exhibits/ml_backtest.csv",
+        "note": "Local snapshot, not verification of public deployment"
+      }
+    },
+    {
+      "path": "sources/review_v2/exhibits/option_validation.csv",
+      "version": "review_v2",
+      "sha256": "c58dcdc938f3633ee6b6f59e2523c8f5c3a9ce26a520e26769beff5716920aa2",
+      "origin": {
+        "kind": "local_review",
+        "repository_path": "exhibits/option_validation.csv",
+        "note": "Local snapshot, not verification of public deployment"
+      }
+    },
+    {
+      "path": "sources/review_v2/src/config.py",
+      "version": "review_v2",
+      "sha256": "b07355f5a64103bde9978db4c32706ec46cc0661597e583c1d8803287236bd2e",
+      "origin": {
+        "kind": "local_review",
+        "repository_path": "src/config.py",
+        "note": "Local snapshot, not verification of public deployment"
+      }
+    },
+    {
+      "path": "sources/review_v2/src/ml.py",
+      "version": "review_v2",
+      "sha256": "1c6fa05274c2d85f3c28b1530321c22fcc161a072eb7c6c1d25b3cd2a37df514",
+      "origin": {
+        "kind": "local_review",
+        "repository_path": "src/ml.py",
+        "note": "Local snapshot, not verification of public deployment"
+      }
+    },
+    {
+      "path": "sources/review_v2/src/portfolio.py",
+      "version": "review_v2",
+      "sha256": "8e3ddadd23470c9871652aa33657d6f6ae41615b2e09e077df300b4e7ff10efc",
+      "origin": {
+        "kind": "local_review",
+        "repository_path": "src/portfolio.py",
+        "note": "Local snapshot, not verification of public deployment"
+      }
+    },
+    {
+      "path": "sources/review_v2/src/options.py",
+      "version": "review_v2",
+      "sha256": "14ea7ff9ccdc44a24fb3ac7f21f43cb29ad4ab226d742cdca4ed7489933ff3fd",
+      "origin": {
+        "kind": "local_review",
+        "repository_path": "src/options.py",
+        "note": "Local snapshot, not verification of public deployment"
+      }
+    },
+    {
+      "path": "sources/review_v2/src/hedge.py",
+      "version": "review_v2",
+      "sha256": "16209964d5164a43bb46108a8d328882b994937de0143f1c1f1360425d43c3af",
+      "origin": {
+        "kind": "local_review",
+        "repository_path": "src/hedge.py",
+        "note": "Local snapshot, not verification of public deployment"
+      }
+    },
+    {
+      "path": "sources/review_v2/src/review.py",
+      "version": "review_v2",
+      "sha256": "99b270baddb2419e3cbdfc49c4a9e3166d34e83c30530dec1d3e0a1916e0fbee",
+      "origin": {
+        "kind": "local_review",
+        "repository_path": "src/review.py",
+        "note": "Local snapshot, not verification of public deployment"
+      }
+    },
+    {
+      "path": "sources/review_v2/data/reference/inputs.json",
+      "version": "review_v2",
+      "sha256": "e16ee274d01a4dcb17bf75396c625621e075f98801c5e37681468813494c22c1",
+      "origin": {
+        "kind": "local_review",
+        "repository_path": "data/reference/inputs.json",
+        "note": "Local snapshot, not verification of public deployment"
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "name": "Asset Pricing and Hedging Assistant",
+  "role": "Beginner-friendly educational guide to the project",
+  "default_version": "resume_v1",
+  "planned_provider": "Gemini API",
+  "connected_model": null,
+  "capabilities": {
+    "curated_knowledge": true,
+    "basic_faq": true,
+    "lexical_retrieval": true,
+    "semantic_retrieval": false,
+    "generative_answers": false,
+    "calculator_tools": false,
+    "live_market_data": false,
+    "trade_execution": false,
+    "persistent_personal_memory": false
+  },
+  "suggested_questions": [
+    "Who are you and what can you help me with?",
+    "Explain this project without finance jargon.",
+    "What is a share, and who generates the expansion cash flows?",
+    "Where does the 10.96% required return come from?",
+    "Show how the original expansion NPV is calculated.",
+    "Why might a company choose a collar instead of a forward?",
+    "What does 0.30 Sharpe mean in the original resume experiment?",
+    "What are the limitations of this project?"
+  ]
+}

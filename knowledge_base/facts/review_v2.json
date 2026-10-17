@@ -1,0 +1,823 @@
+{
+  "schema_version": 1,
+  "version": "review_v2",
+  "market_asof": "2026-09-22",
+  "units": {
+    "INR_per_crore": 10000000,
+    "INR_per_million": 1000000,
+    "INR_per_billion": 1000000000,
+    "rate_convention": "fractions, not percent values; 0.065 means 6.5%"
+  },
+  "facts": {
+    "rf_in": {
+      "value": 0.065,
+      "label": "India risk-free proxy (labelled fallback)",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "rf_in"
+      }
+    },
+    "rf_us": {
+      "value": 0.04963000297546387,
+      "label": "Saved USD rate input",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "rf_us"
+      }
+    },
+    "erp": {
+      "value": 0.055,
+      "label": "Assumed India equity risk premium",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "erp"
+      }
+    },
+    "beta": {
+      "value": 0.8105059957258894,
+      "label": "Infosys versus Nifty beta",
+      "unit": "dimensionless",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "beta"
+      }
+    },
+    "ke_capm": {
+      "value": 0.10957782976492392,
+      "label": "CAPM required equity return",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "ke_capm"
+      }
+    },
+    "ke_fx": {
+      "value": 0.10266869613832305,
+      "label": "Market-plus-FX required equity return",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "ke_fx"
+      }
+    },
+    "wacc": {
+      "value": 0.10956662402663049,
+      "label": "CAPM-based WACC",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "wacc"
+      }
+    },
+    "wacc_fx": {
+      "value": 0.10265900616418033,
+      "label": "Factor-model WACC cross-check",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "wacc_fx"
+      }
+    },
+    "we": {
+      "value": 0.9997806144398654,
+      "label": "Market-value equity funding weight",
+      "unit": "fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "we"
+      }
+    },
+    "spot_fx": {
+      "value": 95.80500030517578,
+      "label": "Saved USDINR spot",
+      "unit": "INR_per_USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "spot_fx"
+      }
+    },
+    "npv_unhedged": {
+      "value": 705437568.4419055,
+      "label": "Expansion NPV, flat saved spot",
+      "unit": "INR",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "npv_unhedged"
+      }
+    },
+    "npv_hedged": {
+      "value": 926139506.7453237,
+      "label": "Expansion NPV, forward conversion path",
+      "unit": "INR",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "npv_hedged"
+      }
+    },
+    "irr_unhedged": {
+      "value": 0.159753201599942,
+      "label": "Expansion flat-spot IRR",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "irr_unhedged"
+      }
+    },
+    "fcf_haircut": {
+      "value": 0.08428330425957498,
+      "label": "Uniform annual FCF haircut that sets flat-spot NPV to zero",
+      "unit": "fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "fcf_haircut"
+      }
+    },
+    "fwd": {
+      "value": 97.14410131496147,
+      "label": "Model one-year USDINR forward",
+      "unit": "INR_per_USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "fwd"
+      }
+    },
+    "notional": {
+      "value": 36000000.0,
+      "label": "Separate Treasury dollar receipt contract",
+      "unit": "USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "notional"
+      }
+    },
+    "put_k": {
+      "value": 94.47684522230094,
+      "label": "USD put strike",
+      "unit": "INR_per_USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "put_k"
+      }
+    },
+    "call_k": {
+      "value": 100.41579010456044,
+      "label": "USD call strike",
+      "unit": "INR_per_USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "call_k"
+      }
+    },
+    "put_prem": {
+      "value": 0.714431779254916,
+      "label": "Upfront vanilla put premium",
+      "unit": "INR_per_USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "put_prem"
+      }
+    },
+    "collar_net": {
+      "value": 0.033960690786173586,
+      "label": "Upfront net collar premium",
+      "unit": "INR_per_USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "collar_net"
+      }
+    },
+    "fx_vol": {
+      "value": 0.048005160556444,
+      "label": "Annualised historical FX volatility",
+      "unit": "annualised_volatility_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "fx_vol"
+      }
+    },
+    "asian": {
+      "value": 1.4759776387277463,
+      "label": "ATM arithmetic-average Asian CALL premium",
+      "unit": "INR_per_USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "asian"
+      }
+    },
+    "vanilla_call": {
+      "value": 2.5157547023630116,
+      "label": "ATM vanilla FX CALL premium",
+      "unit": "INR_per_USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "vanilla_call"
+      }
+    },
+    "collar_vol": {
+      "value": 99.47356170170367,
+      "label": "Collar equally spaced scenario proceeds standard deviation",
+      "unit": "INR_million",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "collar_vol"
+      }
+    },
+    "unhedged_vol": {
+      "value": 306.14757302581035,
+      "label": "Unhedged equally spaced scenario proceeds standard deviation",
+      "unit": "INR_million",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "unhedged_vol"
+      }
+    },
+    "dps": {
+      "value": 48.0,
+      "label": "Saved trailing dividend per INR-listed share",
+      "unit": "INR_per_share",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "dps"
+      }
+    },
+    "gordon": {
+      "value": 845.9522644390229,
+      "label": "Gordon dividend model share value",
+      "unit": "INR_per_share",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "gordon"
+      }
+    },
+    "px": {
+      "value": 1051.4000244140625,
+      "label": "Saved INR-listed share price",
+      "unit": "INR_per_share",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "px"
+      }
+    },
+    "impl_g": {
+      "value": 0.06164174565831801,
+      "label": "Implied growth with next dividend held fixed",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "impl_g"
+      }
+    },
+    "opt_mid": {
+      "value": 0.6,
+      "label": "Archived INFY ADR call mid",
+      "unit": "USD_per_ADR",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "opt_mid"
+      }
+    },
+    "opt_k": {
+      "value": 11.0,
+      "label": "INFY ADR call strike",
+      "unit": "USD_per_ADR",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "opt_k"
+      }
+    },
+    "opt_bs": {
+      "value": 0.6000000000000005,
+      "label": "ADR Black-Scholes price calibrated to same mid",
+      "unit": "USD_per_ADR",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "opt_bs"
+      }
+    },
+    "opt_crr": {
+      "value": 0.6028706430589746,
+      "label": "ADR 50-step CRR price",
+      "unit": "USD_per_ADR",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "opt_crr"
+      }
+    },
+    "opt_iv": {
+      "value": 0.37043063113230773,
+      "label": "Implied volatility calibrated from the ADR mid",
+      "unit": "annualised_volatility_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "opt_iv"
+      }
+    },
+    "opt_delta": {
+      "value": 0.5070008099126939,
+      "label": "ADR call delta",
+      "unit": "dimensionless",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "opt_delta"
+      }
+    },
+    "opt_gamma": {
+      "value": 0.24753093104490087,
+      "label": "ADR call gamma",
+      "unit": "per_USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "opt_gamma"
+      }
+    },
+    "opt_vega": {
+      "value": 1.7352018864561307,
+      "label": "ADR call vega per unit volatility",
+      "unit": "USD_per_unit_volatility",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "opt_vega"
+      }
+    },
+    "opt_theta": {
+      "value": -2.2307149250024825,
+      "label": "ADR call theta per year",
+      "unit": "USD_per_year",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "opt_theta"
+      }
+    },
+    "rmse_gb": {
+      "value": 0.03754008018001366,
+      "label": "INFY gradient-boosting next-week forecast RMSE",
+      "unit": "weekly_return_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "rmse_gb"
+      }
+    },
+    "rmse_ridge": {
+      "value": 0.035736785182573116,
+      "label": "INFY Ridge next-week forecast RMSE",
+      "unit": "weekly_return_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "rmse_ridge"
+      }
+    },
+    "rmse_hist": {
+      "value": 0.03498093859056621,
+      "label": "INFY historical-mean next-week forecast RMSE",
+      "unit": "weekly_return_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "rmse_hist"
+      }
+    },
+    "hit_gb": {
+      "value": 0.49310344827586206,
+      "label": "INFY gradient-boosting direction hit rate",
+      "unit": "fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "hit_gb"
+      }
+    },
+    "sh_hist": {
+      "value": -0.14085918877188616,
+      "label": "Trailing historical-allocation Sharpe",
+      "unit": "dimensionless",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "sh_hist"
+      }
+    },
+    "sh_gb": {
+      "value": 0.2574802326556979,
+      "label": "Gradient-boosting allocation Sharpe",
+      "unit": "dimensionless",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "sh_gb"
+      }
+    },
+    "sh_nifty": {
+      "value": 0.21998426451490166,
+      "label": "Nifty PRICE reference Sharpe",
+      "unit": "dimensionless",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "sh_nifty"
+      }
+    },
+    "sh_inv": {
+      "value": 0.10029848266783738,
+      "label": "Inverse-volatility allocation Sharpe",
+      "unit": "dimensionless",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "sh_inv"
+      }
+    },
+    "sh_eq": {
+      "value": 0.0610479879744403,
+      "label": "Equal-weight allocation Sharpe",
+      "unit": "dimensionless",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "sh_eq"
+      }
+    },
+    "PROJECT_CAPEX_USD": {
+      "value": 80000000.0,
+      "label": "Initial expansion spending today",
+      "unit": "USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "PROJECT_CAPEX_USD"
+      }
+    },
+    "PROJECT_FCF_USD": {
+      "value": [
+        32000000.0,
+        36000000.0,
+        40000000.0
+      ],
+      "label": "Illustrative unlevered FCF, years 1/2/3",
+      "unit": "USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "PROJECT_FCF_USD"
+      }
+    },
+    "PROJECT_SALVAGE_USD": {
+      "value": 0.0,
+      "label": "Salvage at project end",
+      "unit": "USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "PROJECT_SALVAGE_USD"
+      }
+    },
+    "PROJECT_HORIZON_YEARS": {
+      "value": 3,
+      "label": "Expansion horizon",
+      "unit": "years",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "PROJECT_HORIZON_YEARS"
+      }
+    },
+    "GORDON_G": {
+      "value": 0.05,
+      "label": "Assumed perpetual dividend growth",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "GORDON_G"
+      }
+    },
+    "TAX_RATE": {
+      "value": 0.25,
+      "label": "Assumed corporate tax rate",
+      "unit": "fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "TAX_RATE"
+      }
+    },
+    "BOND_YTM": {
+      "value": 0.078,
+      "label": "Teaching bond yield to maturity",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "BOND_YTM"
+      }
+    },
+    "BOND_COUPON": {
+      "value": 0.072,
+      "label": "Teaching bond coupon",
+      "unit": "annual_fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "BOND_COUPON"
+      }
+    },
+    "BOOK": {
+      "value": [
+        "INFY.NS",
+        "HDFCBANK.NS",
+        "RELIANCE.NS",
+        "HINDUNILVR.NS",
+        "GOLDBEES.NS"
+      ],
+      "label": "Fixed historical portfolio universe",
+      "unit": "ticker_list",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "BOOK"
+      }
+    },
+    "ML_MIN_TRAIN": {
+      "value": 104,
+      "label": "Minimum eligible training observations",
+      "unit": "weeks",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "ML_MIN_TRAIN"
+      }
+    },
+    "ML_REFIT_EVERY": {
+      "value": 4,
+      "label": "Forecast refit interval",
+      "unit": "weeks",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "ML_REFIT_EVERY"
+      }
+    },
+    "ML_COV_LOOKBACK": {
+      "value": 52,
+      "label": "Allocation covariance lookback",
+      "unit": "weeks",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "ML_COV_LOOKBACK"
+      }
+    },
+    "ML_BLEND": {
+      "value": 0.2,
+      "label": "Model forecast share in blended return estimate",
+      "unit": "fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "ML_BLEND"
+      }
+    },
+    "MAX_WEIGHT": {
+      "value": 0.35,
+      "label": "Position target cap at rebalance",
+      "unit": "fraction",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "MAX_WEIGHT"
+      }
+    },
+    "REBALANCE_WEEKS": {
+      "value": 4,
+      "label": "Active allocation rebalance interval",
+      "unit": "weeks",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "REBALANCE_WEEKS"
+      }
+    },
+    "TRANSACTION_COST_BPS": {
+      "value": 10,
+      "label": "Cost per unit of half-L1 one-way turnover",
+      "unit": "basis_points",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "TRANSACTION_COST_BPS"
+      }
+    },
+    "ASIAN_STEPS": {
+      "value": 12,
+      "label": "Future monthly fixings per simulated path",
+      "unit": "count",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "ASIAN_STEPS"
+      }
+    },
+    "ASIAN_PATHS": {
+      "value": 40000,
+      "label": "Monte Carlo pricing paths",
+      "unit": "count",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/src/config.py",
+        "field": "ASIAN_PATHS"
+      }
+    },
+    "sh_ridge": {
+      "value": 0.2929513864074617,
+      "label": "Later Ridge allocation Sharpe",
+      "unit": "dimensionless",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "sh_ridge"
+      }
+    },
+    "sh_expanding": {
+      "value": 0.2864357797147404,
+      "label": "Later expanding-mean matched baseline Sharpe",
+      "unit": "dimensionless",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "sh_expanding"
+      }
+    },
+    "asian_put": {
+      "value": 0.3396831885660543,
+      "label": "Matched arithmetic-average USD PUT premium",
+      "unit": "INR_per_USD",
+      "version": "review_v2",
+      "source": {
+        "path": "sources/review_v2/exhibits/summary.json",
+        "field": "asian_put"
+      }
+    }
+  },
+  "derived": {
+    "debt_weight": 0.00021938556013456623,
+    "flat_spot_dcf": {
+      "rows": [
+        {
+          "year": 1,
+          "fcf_usd": 32000000.0,
+          "conversion_inr_per_usd": 95.80500030517578,
+          "fcf_inr": 3065760009.765625,
+          "discount_factor": 1.1095666240266304,
+          "present_value_inr": 2763024719.182653
+        },
+        {
+          "year": 2,
+          "fcf_usd": 36000000.0,
+          "conversion_inr_per_usd": 95.80500030517578,
+          "fcf_inr": 3448980010.986328,
+          "discount_factor": 1.2311380931538538,
+          "present_value_inr": 2801456660.439239
+        },
+        {
+          "year": 3,
+          "fcf_usd": 40000000.0,
+          "conversion_inr_per_usd": 95.80500030517578,
+          "fcf_inr": 3832200012.2070312,
+          "discount_factor": 1.3660297377313049,
+          "present_value_inr": 2805356213.234076
+        }
+      ],
+      "initial_cost_inr": 7664400024.4140625,
+      "pv_inflows_inr": 8369837592.855968,
+      "npv_inr": 705437568.441906,
+      "source_fields": [
+        "PROJECT_CAPEX_USD",
+        "PROJECT_FCF_USD",
+        "spot_fx",
+        "wacc"
+      ],
+      "formula": "sum(FCF_USD[t] * spot / (1 + wacc)**t) - capex_USD * spot"
+    }
+  },
+  "portfolio_metrics": {
+    "gb_mv": {
+      "sharpe": 0.2574802326556979,
+      "ann_mean": 0.09138000605479343,
+      "ann_vol": 0.10245449051643793,
+      "max_drawdown": -0.15326023765124663,
+      "annual_turnover": 1.0241129481443632,
+      "beta": 0.5843420242191574,
+      "jensen": 0.00973873127134076,
+      "tracking_error": 0.08757794892448603,
+      "info_ratio": -0.023963209402162795
+    },
+    "ridge_mv": {
+      "sharpe": 0.2929513864074617,
+      "ann_mean": 0.09490539581542912,
+      "ann_vol": 0.10208313461890958,
+      "max_drawdown": -0.1628939246875799,
+      "annual_turnover": 0.7805972098894869,
+      "beta": 0.5702450682986296,
+      "jensen": 0.013665583373140763,
+      "tracking_error": 0.08981342288336208,
+      "info_ratio": 0.015885610254484626
+    },
+    "expanding_mv": {
+      "sharpe": 0.2864357797147404,
+      "ann_mean": 0.09419520081631463,
+      "ann_vol": 0.10192581682843516,
+      "max_drawdown": -0.1648025343140075,
+      "annual_turnover": 0.7731615425763239,
+      "beta": 0.5689571745548768,
+      "jensen": 0.012992065855352942,
+      "tracking_error": 0.08987505255206434,
+      "info_ratio": 0.007972691109323521
+    },
+    "hist_mv": {
+      "sharpe": -0.14085918877188616,
+      "ann_mean": 0.04836853207749369,
+      "ann_vol": 0.1180715867208356,
+      "max_drawdown": -0.1669978320076444,
+      "annual_turnover": 1.64833474300056,
+      "beta": 0.6450314576045056,
+      "jensen": -0.03500109612836977,
+      "tracking_error": 0.09528719766908118,
+      "info_ratio": -0.473412208668893
+    },
+    "inv_vol": {
+      "sharpe": 0.10029848266783738,
+      "ann_mean": 0.07568544663484508,
+      "ann_vol": 0.10653647344030633,
+      "max_drawdown": -0.17942924308718877,
+      "annual_turnover": 0.4601104823261024,
+      "beta": 0.6687509827034889,
+      "jensen": -0.008359681737949966,
+      "tracking_error": 0.07545678003182082,
+      "info_ratio": -0.23580661859059132
+    },
+    "equal": {
+      "sharpe": 0.0610479879744403,
+      "ann_mean": 0.07180313079632145,
+      "ann_vol": 0.11143906657775181,
+      "max_drawdown": -0.1802890019705693,
+      "annual_turnover": 0.42709166224272266,
+      "beta": 0.7132878424218101,
+      "jensen": -0.013510347429549888,
+      "tracking_error": 0.07259172422223013,
+      "info_ratio": -0.29859497373563626
+    },
+    "nifty": {
+      "sharpe": 0.21998426451490166,
+      "ann_mean": 0.09347865478388281,
+      "ann_vol": 0.12945769028836004,
+      "max_drawdown": -0.16604642414619597,
+      "annual_turnover": 0.0,
+      "beta": 1.0,
+      "jensen": 0.0,
+      "tracking_error": 0.0,
+      "info_ratio": 0.0
+    }
+  }
+}

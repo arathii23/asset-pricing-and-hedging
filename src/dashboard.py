@@ -127,6 +127,7 @@ def render_home(m: dict) -> None:
     st.caption(
         f"Reference company: Infosys  ·  Market snapshot: {date_label(m['asof'])}  ·  Base currency: INR"
     )
+    st.button("Ask a question about this project", on_click=navigate, args=(PAGES[6],), key="open_assistant")
     st.markdown(
         '<div class="case-note"><strong>Scope.</strong> The expansion and its cash flows '
         'are illustrative assumptions. Public Infosys data provides a reference for risk '

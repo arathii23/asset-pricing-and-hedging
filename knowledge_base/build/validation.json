@@ -1,0 +1,549 @@
+{
+  "schema_version": 1,
+  "document_count": 12,
+  "passage_count": 90,
+  "frozen_source_files_verified": 20,
+  "default_version": "resume_v1",
+  "network_calls": 0,
+  "retrieval": {
+    "test_type": "lexical retrieval smoke test, NOT semantic or generated-answer accuracy",
+    "top_k": 4,
+    "reference_cases": 55,
+    "graded_retrieval_cases": 41,
+    "evidence_hits": 41,
+    "evidence_hit_rate": 1.0,
+    "exact_faq_cases_passed": 8,
+    "llm_answers_evaluated": 0,
+    "details": [
+      {
+        "id": "identity",
+        "type": "exact_faq_template",
+        "passed": true,
+        "evidence_document": "assistant"
+      },
+      {
+        "id": "help",
+        "type": "exact_faq_template",
+        "passed": true,
+        "evidence_document": "assistant"
+      },
+      {
+        "id": "greeting",
+        "type": "exact_faq_template",
+        "passed": true,
+        "evidence_document": "assistant"
+      },
+      {
+        "id": "start",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:assistant:how-should-i-start-if-i-do-not-know-finance:1:4f4cbfaa04",
+          "common:hedging:how-does-a-forward-work-and-where-does-its-rate-come-from:1:80a6c039ba",
+          "common:evidence:where-do-the-input-data-and-assumptions-come-from:1:ab1ecf9744",
+          "common:required_return:what-does-expected-return-mean-and-where-does-it-come-from:1:e6ea525c1e"
+        ]
+      },
+      {
+        "id": "provider",
+        "type": "exact_faq_template",
+        "passed": true,
+        "evidence_document": "assistant"
+      },
+      {
+        "id": "live",
+        "type": "exact_faq_template",
+        "passed": true,
+        "evidence_document": "assistant"
+      },
+      {
+        "id": "memory",
+        "type": "exact_faq_template",
+        "passed": true,
+        "evidence_document": "assistant"
+      },
+      {
+        "id": "status",
+        "type": "exact_faq_template",
+        "passed": true,
+        "evidence_document": "assistant"
+      },
+      {
+        "id": "scope",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:project:what-are-the-public-project-links:1:5704fbbde0",
+          "common:project:what-is-this-project-about:1:09b7385dec",
+          "common:assistant:are-you-gemini-or-chatgpt-were-you-trained-on-this-project:1:c0ed94aa66",
+          "common:project:is-this-an-actual-infosys-expansion-or-investment-recommendation:1:5a7aed6fa9"
+        ]
+      },
+      {
+        "id": "nav",
+        "type": "exact_faq_template",
+        "passed": true,
+        "evidence_document": "project"
+      },
+      {
+        "id": "share",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:ownership:what-is-a-share-and-who-is-a-shareholder:1:8cd8e8916d",
+          "common:ownership:how-can-shareholders-earn-money-must-a-good-expansion-raise-the-share-price:1:9072935765",
+          "common:required_return:what-does-gordon-dividend-valuation-estimate:1:522afeb635",
+          "common:cash_valuation:is-there-a-terminal-value-or-salvage-payment-after-year-three:1:0c89d7b039"
+        ]
+      },
+      {
+        "id": "stock_profit",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:ownership:how-can-shareholders-earn-money-must-a-good-expansion-raise-the-share-price:1:9072935765",
+          "common:ownership:what-is-a-share-and-who-is-a-shareholder:1:8cd8e8916d",
+          "common:required_return:what-does-gordon-dividend-valuation-estimate:1:522afeb635",
+          "common:ownership:what-is-an-expansion-and-who-generates-the-later-cash-flows:1:e829d406fc"
+        ]
+      },
+      {
+        "id": "borrow",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:ownership:why-borrow-if-the-company-already-has-money:1:1ce240e657",
+          "common:ownership:how-can-shareholders-earn-money-must-a-good-expansion-raise-the-share-price:1:9072935765",
+          "common:cash_valuation:why-is-future-money-discounted:1:1c62ccc4be",
+          "common:ownership:is-almost-100-equity-funding-the-same-as-all-cash-being-shareholders-money:1:033fde1b93"
+        ]
+      },
+      {
+        "id": "capital",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:ownership:is-almost-100-equity-funding-the-same-as-all-cash-being-shareholders-money:1:033fde1b93",
+          "common:ownership:how-can-shareholders-earn-money-must-a-good-expansion-raise-the-share-price:1:9072935765",
+          "common:ownership:how-are-shareholders-different-from-lenders:1:62ac340b7a",
+          "common:required_return:what-is-wacc-and-why-is-it-close-to-the-equity-return:1:b8f6727a0f"
+        ]
+      },
+      {
+        "id": "cashflow",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:ownership:what-is-an-expansion-and-who-generates-the-later-cash-flows:1:e829d406fc",
+          "common:cash_valuation:why-does-the-wacc-percentage-appear-in-the-cash-flow-calculation:1:c45a5d76ae",
+          "common:project:is-this-an-actual-infosys-expansion-or-investment-recommendation:1:5a7aed6fa9",
+          "common:ownership:how-can-shareholders-earn-money-must-a-good-expansion-raise-the-share-price:1:9072935765"
+        ]
+      },
+      {
+        "id": "fcf",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:ownership:are-free-cash-flow-revenue-profit-and-dividends-the-same:1:674c6bb0d2",
+          "common:cash_valuation:what-is-sensitivity-analysis-and-a-break-even-cash-flow-haircut:1:ae6a3d5846",
+          "common:cash_valuation:why-does-the-wacc-percentage-appear-in-the-cash-flow-calculation:1:c45a5d76ae",
+          "common:required_return:how-does-capm-combine-the-risk-free-rate-and-equity-risk-premium:1:ad7f8cc124"
+        ]
+      },
+      {
+        "id": "discount",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:cash_valuation:why-is-future-money-discounted:1:1c62ccc4be",
+          "common:ownership:how-can-shareholders-earn-money-must-a-good-expansion-raise-the-share-price:1:9072935765",
+          "common:ownership:is-almost-100-equity-funding-the-same-as-all-cash-being-shareholders-money:1:033fde1b93",
+          "common:ownership:why-borrow-if-the-company-already-has-money:1:1ce240e657"
+        ]
+      },
+      {
+        "id": "dcf",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:cash_valuation:what-is-dcf-and-how-does-npv-differ:1:64a4c4c22a",
+          "common:options:what-is-black-scholes-and-how-does-the-fx-version-differ:1:02b67cbeb3",
+          "common:hedging:does-hedging-automatically-increase-npv-or-reduce-wacc:1:1f153b44d0",
+          "resume_v1:resume_results:expansion-npv-calculation-and-the-8.37-billion-rupee-total:1:b27460596d"
+        ]
+      },
+      {
+        "id": "hurdle",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:cash_valuation:why-does-the-wacc-percentage-appear-in-the-cash-flow-calculation:1:c45a5d76ae",
+          "common:ownership:are-free-cash-flow-revenue-profit-and-dividends-the-same:1:674c6bb0d2",
+          "common:cash_valuation:what-does-irr-mean-is-it-the-same-as-wacc:1:c3008fe259",
+          "common:cash_valuation:what-is-sensitivity-analysis-and-a-break-even-cash-flow-haircut:1:ae6a3d5846"
+        ]
+      },
+      {
+        "id": "irr",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:cash_valuation:what-does-irr-mean-is-it-the-same-as-wacc:1:c3008fe259",
+          "common:hedging:does-hedging-automatically-increase-npv-or-reduce-wacc:1:1f153b44d0",
+          "common:required_return:what-is-wacc-and-why-is-it-close-to-the-equity-return:1:b8f6727a0f",
+          "common:cash_valuation:why-does-the-wacc-percentage-appear-in-the-cash-flow-calculation:1:c45a5d76ae"
+        ]
+      },
+      {
+        "id": "units",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:cash_valuation:how-do-crore-million-and-billion-relate:1:f738f3d5d0",
+          "resume_v1:resume_results:expansion-npv-calculation-and-the-8.37-billion-rupee-total:1:b27460596d",
+          "common:cash_valuation:what-does-irr-mean-is-it-the-same-as-wacc:1:c3008fe259",
+          "common:ownership:are-free-cash-flow-revenue-profit-and-dividends-the-same:1:674c6bb0d2"
+        ]
+      },
+      {
+        "id": "npv_calc",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "resume_v1:resume_results:expansion-npv-calculation-and-the-8.37-billion-rupee-total:1:b27460596d",
+          "common:cash_valuation:why-does-the-wacc-percentage-appear-in-the-cash-flow-calculation:1:c45a5d76ae",
+          "common:cash_valuation:what-is-dcf-and-how-does-npv-differ:1:64a4c4c22a",
+          "common:hedging:does-hedging-automatically-increase-npv-or-reduce-wacc:1:1f153b44d0"
+        ]
+      },
+      {
+        "id": "expected",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:required_return:what-does-expected-return-mean-and-where-does-it-come-from:1:e6ea525c1e",
+          "common:evidence:where-do-the-input-data-and-assumptions-come-from:1:ab1ecf9744",
+          "common:hedging:how-does-a-forward-work-and-where-does-its-rate-come-from:1:80a6c039ba",
+          "common:portfolio:what-do-0.30-sharpe-and-0.22-nifty-mean:1:7e117702a9"
+        ]
+      },
+      {
+        "id": "risk",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:required_return:what-are-market-risk-and-beta-why-use-the-stock-here:1:297cd22345",
+          "common:required_return:how-does-capm-combine-the-risk-free-rate-and-equity-risk-premium:1:ad7f8cc124",
+          "common:hedging:is-the-displayed-hedge-dispersion-a-forecast-of-risk:1:efdd763f77",
+          "common:required_return:what-does-the-market-plus-fx-factor-model-add:1:615eebe4b1"
+        ]
+      },
+      {
+        "id": "rates",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:required_return:how-does-capm-combine-the-risk-free-rate-and-equity-risk-premium:1:ad7f8cc124",
+          "resume_v1:resume_results:capm-wacc-and-equity-valuation-numbers:1:7548194d4c",
+          "common:required_return:what-does-expected-return-mean-and-where-does-it-come-from:1:e6ea525c1e",
+          "common:required_return:what-does-the-market-plus-fx-factor-model-add:1:615eebe4b1"
+        ]
+      },
+      {
+        "id": "wacc",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:required_return:what-is-wacc-and-why-is-it-close-to-the-equity-return:1:b8f6727a0f",
+          "resume_v1:resume_results:capm-wacc-and-equity-valuation-numbers:1:7548194d4c",
+          "common:required_return:how-does-capm-combine-the-risk-free-rate-and-equity-risk-premium:1:ad7f8cc124",
+          "common:cash_valuation:what-does-irr-mean-is-it-the-same-as-wacc:1:c3008fe259"
+        ]
+      },
+      {
+        "id": "gordon",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:required_return:what-does-gordon-dividend-valuation-estimate:1:522afeb635",
+          "resume_v1:resume_results:capm-wacc-and-equity-valuation-numbers:1:7548194d4c",
+          "common:required_return:what-does-the-reported-implied-growth-mean:1:53e38df331",
+          "common:project:how-do-i-use-the-website:1:b755d64d41"
+        ]
+      },
+      {
+        "id": "factor",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:required_return:what-does-the-market-plus-fx-factor-model-add:1:615eebe4b1",
+          "common:options:what-is-black-scholes-and-how-does-the-fx-version-differ:1:02b67cbeb3",
+          "common:evidence:is-every-resume-method-fully-supported-without-qualification:1:0b9bd9adc2",
+          "common:required_return:what-are-market-risk-and-beta-why-use-the-stock-here:1:297cd22345"
+        ]
+      },
+      {
+        "id": "collar",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:hedging:what-is-a-collar-and-why-is-it-not-free-protection:1:ec2b0b9cb2",
+          "common:required_return:how-does-capm-combine-the-risk-free-rate-and-equity-risk-premium:1:ad7f8cc124",
+          "common:ownership:are-free-cash-flow-revenue-profit-and-dividends-the-same:1:674c6bb0d2",
+          "common:hedging:why-must-average-rate-protection-match-the-receipt-contract:1:5059a81853"
+        ]
+      },
+      {
+        "id": "forward",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:hedging:how-does-a-forward-work-and-where-does-its-rate-come-from:1:80a6c039ba",
+          "common:portfolio:what-does-walk-forward-mean-and-why-not-use-a-random-split:1:b8395709fb",
+          "common:hedging:is-the-displayed-hedge-dispersion-a-forecast-of-risk:1:efdd763f77",
+          "common:hedging:does-hedging-automatically-increase-npv-or-reduce-wacc:1:1f153b44d0"
+        ]
+      },
+      {
+        "id": "delta",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:hedging:what-does-25-delta-mean-is-it-a-25-hedge:1:6deca09173",
+          "common:options:what-are-delta-gamma-vega-and-theta:1:4651354338",
+          "common:evidence:why-does-the-original-last-weekly-label-say-25-september:1:f2e7ef838a",
+          "common:hedging:what-does-a-currency-hedge-do-what-does-it-not-do:1:d58659a7d0"
+        ]
+      },
+      {
+        "id": "basis",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:hedging:why-must-average-rate-protection-match-the-receipt-contract:1:5059a81853",
+          "common:options:what-is-an-asian-arithmetic-average-option-and-monte-carlo-pricing:1:6750d870fa",
+          "common:hedging:how-does-a-put-protect-a-dollar-receipt:1:33db46d267",
+          "common:hedging:what-is-a-collar-and-why-is-it-not-free-protection:1:ec2b0b9cb2"
+        ]
+      },
+      {
+        "id": "binomial",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:options:what-does-the-binomial-or-crr-model-calculate:1:908821a94d",
+          "common:options:did-matching-the-option-mid-independently-validate-black-scholes:1:43c618f5b5",
+          "common:options:what-are-delta-gamma-vega-and-theta:1:4651354338",
+          "common:options:what-is-an-asian-arithmetic-average-option-and-monte-carlo-pricing:1:6750d870fa"
+        ]
+      },
+      {
+        "id": "greeks",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:options:what-are-delta-gamma-vega-and-theta:1:4651354338",
+          "common:hedging:what-does-25-delta-mean-is-it-a-25-hedge:1:6deca09173",
+          "resume_v1:resume_results:currency-hedge-and-option-numbers:1:771c9f0141",
+          "common:options:did-matching-the-option-mid-independently-validate-black-scholes:1:43c618f5b5"
+        ]
+      },
+      {
+        "id": "calibration",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:options:did-matching-the-option-mid-independently-validate-black-scholes:1:43c618f5b5",
+          "common:options:what-is-black-scholes-and-how-does-the-fx-version-differ:1:02b67cbeb3",
+          "common:options:what-is-an-asian-arithmetic-average-option-and-monte-carlo-pricing:1:6750d870fa",
+          "resume_v1:resume_results:currency-hedge-and-option-numbers:1:771c9f0141"
+        ]
+      },
+      {
+        "id": "walk",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:portfolio:what-does-walk-forward-mean-and-why-not-use-a-random-split:1:b8395709fb",
+          "common:portfolio:what-does-mean-variance-allocation-use:1:1089d69a00",
+          "common:hedging:how-does-a-forward-work-and-where-does-its-rate-come-from:1:80a6c039ba",
+          "common:required_return:what-are-market-risk-and-beta-why-use-the-stock-here:1:297cd22345"
+        ]
+      },
+      {
+        "id": "ml_target",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:portfolio:what-do-ridge-and-gradient-boosting-predict:1:6512bcb384",
+          "common:portfolio:how-are-forecasts-turned-into-weights-was-ridge-allocated-originally:1:63e89bec0b",
+          "common:assistant:what-can-you-help-me-with:1:8cfd3c0924",
+          "common:portfolio:what-does-walk-forward-mean-and-why-not-use-a-random-split:1:b8395709fb"
+        ]
+      },
+      {
+        "id": "ridge_original",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:portfolio:how-are-forecasts-turned-into-weights-was-ridge-allocated-originally:1:63e89bec0b",
+          "common:evidence:is-every-resume-method-fully-supported-without-qualification:1:0b9bd9adc2",
+          "common:portfolio:what-do-ridge-and-gradient-boosting-predict:1:6512bcb384",
+          "common:portfolio:what-can-i-honestly-say-about-the-ml-conclusion:1:82554217ba"
+        ]
+      },
+      {
+        "id": "sharpe",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:portfolio:what-do-0.30-sharpe-and-0.22-nifty-mean:1:7e117702a9",
+          "resume_v1:resume_results:recorded-portfolio-sharpe-results-and-interpretation:1:ec28517d50",
+          "common:portfolio:why-is-the-nifty-comparison-limited:1:03888b8e88",
+          "common:evidence:which-version-answers-the-submitted-resume-questions:1:ab52b6bdb9"
+        ]
+      },
+      {
+        "id": "tri",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:portfolio:why-is-the-nifty-comparison-limited:1:03888b8e88",
+          "common:portfolio:what-do-0.30-sharpe-and-0.22-nifty-mean:1:7e117702a9",
+          "resume_v1:resume_results:recorded-portfolio-sharpe-results-and-interpretation:1:ec28517d50",
+          "common:portfolio:what-do-ridge-and-gradient-boosting-predict:1:6512bcb384"
+        ]
+      },
+      {
+        "id": "timeline",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:evidence:how-should-i-explain-the-2025-resume-dates-versus-the-2026-data:1:33901a7d49",
+          "resume_v1:resume_results:dates-scope-and-provenance:1:8b622fe362",
+          "common:evidence:which-version-answers-the-submitted-resume-questions:1:ab52b6bdb9",
+          "common:evidence:what-is-missing-and-what-should-the-assistant-say:1:65be4b1f26"
+        ]
+      },
+      {
+        "id": "partial",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:evidence:why-does-the-original-last-weekly-label-say-25-september:1:f2e7ef838a",
+          "common:hedging:what-does-25-delta-mean-is-it-a-25-hedge:1:6deca09173",
+          "resume_v1:resume_results:dates-scope-and-provenance:1:8b622fe362",
+          "common:evidence:what-is-missing-and-what-should-the-assistant-say:1:65be4b1f26"
+        ]
+      },
+      {
+        "id": "limits",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:evidence:what-is-missing-and-what-should-the-assistant-say:1:65be4b1f26",
+          "common:rag:how-will-we-know-the-assistant-is-useful-rather-than-just-fluent:1:91c076c1fe",
+          "common:evidence:can-i-describe-improvements-without-changing-the-submitted-claim:1:3c785a28d9",
+          "common:evidence:how-should-i-explain-the-2025-resume-dates-versus-the-2026-data:1:33901a7d49"
+        ]
+      },
+      {
+        "id": "review",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "review_v2:review_results:allocation-method-and-what-existed-in-this-version:1:147833d1d0",
+          "common:evidence:can-i-describe-improvements-without-changing-the-submitted-claim:1:3c785a28d9",
+          "review_v2:review_results:recorded-portfolio-sharpe-results-and-interpretation:1:93875dd835",
+          "review_v2:review_results:dates-scope-and-provenance:1:ac2b2b9314"
+        ]
+      },
+      {
+        "id": "review_scores",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "review_v2:review_results:recorded-portfolio-sharpe-results-and-interpretation:1:93875dd835",
+          "common:portfolio:how-are-forecasts-turned-into-weights-was-ridge-allocated-originally:1:63e89bec0b",
+          "common:portfolio:what-can-i-honestly-say-about-the-ml-conclusion:1:82554217ba",
+          "common:portfolio:what-do-0.30-sharpe-and-0.22-nifty-mean:1:7e117702a9"
+        ]
+      },
+      {
+        "id": "rag",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:rag:what-is-rag-in-simple-terms:1:7ca83a8644",
+          "common:rag:what-can-be-claimed-on-a-future-ai-ml-resume:1:531a2afa3a",
+          "common:rag:what-privacy-and-cost-boundaries-should-a-public-chatbot-have:1:c96ae3db04",
+          "common:rag:how-will-we-know-the-assistant-is-useful-rather-than-just-fluent:1:91c076c1fe"
+        ]
+      },
+      {
+        "id": "key",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:rag:will-the-owner-need-to-provide-a-gemini-api-key-will-visitors-need-one:1:cd757a9050",
+          "common:assistant:do-you-remember-me-or-need-my-api-key:1:d12328f9c2",
+          "common:assistant:are-you-gemini-or-chatgpt-were-you-trained-on-this-project:1:c0ed94aa66",
+          "common:rag:how-would-a-question-travel-through-the-finished-assistant:1:585480745c"
+        ]
+      },
+      {
+        "id": "rag_eval",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:rag:how-will-we-know-the-assistant-is-useful-rather-than-just-fluent:1:91c076c1fe",
+          "common:options:what-does-a-useful-numerical-check-establish:1:82cddbb30d",
+          "common:evidence:what-is-missing-and-what-should-the-assistant-say:1:65be4b1f26",
+          "common:assistant:are-you-gemini-or-chatgpt-were-you-trained-on-this-project:1:c0ed94aa66"
+        ]
+      },
+      {
+        "id": "compound",
+        "type": "lexical_evidence_hit",
+        "passed": true,
+        "passage_ids": [
+          "common:required_return:what-is-wacc-and-why-is-it-close-to-the-equity-return:1:b8f6727a0f",
+          "common:cash_valuation:what-does-irr-mean-is-it-the-same-as-wacc:1:c3008fe259",
+          "common:cash_valuation:why-does-the-wacc-percentage-appear-in-the-cash-flow-calculation:1:c45a5d76ae",
+          "resume_v1:resume_results:capm-wacc-and-equity-valuation-numbers:1:7548194d4c"
+        ]
+      },
+      {
+        "id": "unknown_live",
+        "type": "future_answer_review",
+        "automated_answer_grade": null
+      },
+      {
+        "id": "unknown_personal",
+        "type": "future_answer_review",
+        "automated_answer_grade": null
+      },
+      {
+        "id": "injection",
+        "type": "future_answer_review",
+        "automated_answer_grade": null
+      },
+      {
+        "id": "guarantee",
+        "type": "future_answer_review",
+        "automated_answer_grade": null
+      },
+      {
+        "id": "ambiguous",
+        "type": "future_answer_review",
+        "automated_answer_grade": null
+      },
+      {
+        "id": "wrong_history",
+        "type": "future_answer_review",
+        "automated_answer_grade": null
+      }
+    ]
+  }
+}

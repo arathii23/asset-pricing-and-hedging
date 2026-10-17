@@ -1,9 +1,9 @@
 """Plain-language reference material for the interactive project walkthrough."""
 
-PAGES = ("Overview", "Expansion & valuation", "Currency hedging", "Portfolio analysis", "Option pricing", "Methods & data")
+PAGES = ("Overview", "Expansion & valuation", "Currency hedging", "Portfolio analysis", "Option pricing", "Methods & data", "Ask the project")
 
-PAGE_FILES = ("overview", "expansion", "hedging", "portfolio", "options", "methods")
-PAGE_SLUGS = ("", "expansion", "dollar-protection", "portfolio", "options", "methods")
+PAGE_FILES = ("overview", "expansion", "hedging", "portfolio", "options", "methods", "assistant")
+PAGE_SLUGS = ("", "expansion", "dollar-protection", "portfolio", "options", "methods", "ask-the-project")
 
 # Accent, light background, and border. Colour identifies sections, not outcomes.
 SECTION_THEMES = {
@@ -13,6 +13,7 @@ SECTION_THEMES = {
     "Portfolio analysis": ("#7050a0", "#f5f0fb", "#ddcfee"),
     "Option pricing": ("#a06419", "#fff7eb", "#ecd9b8"),
     "Methods & data": ("#376a80", "#eff6f9", "#cedee7"),
+    "Ask the project": ("#14786e", "#edf8f5", "#c3e2db"),
 }
 
 
