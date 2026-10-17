@@ -101,7 +101,14 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(generator.calls, [])
 
     def test_missing_or_unknown_citations_are_explicit_fallbacks(self):
-        for text in ("Invented answer.", "Answer [S9]"):
+        for text in (
+            "Invented answer.",
+            "Answer [S9]",
+            json.dumps({"answer": "An answer", "source_ids": ["S9"]}),
+            json.dumps({"answer": "An answer", "source_ids": []}),
+            json.dumps({"answer": "An answer", "source_ids": "S1"}),
+            json.dumps({"answer": ["not a string"], "source_ids": ["S1"]}),
+        ):
             result = self.engine(generator=Generation(text)).answer("What is a share?")
             self.assertEqual(result["route"], "source_only_fallback")
             self.assertIn("not a successful generated answer", result["answer"])
